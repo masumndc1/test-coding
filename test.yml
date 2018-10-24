@@ -1,0 +1,12 @@
+--- 
+- hosts: test
+  become: yes
+
+  tasks:
+   - name: installing htop
+     yum: 
+        name: net-tools 
+        state: present 
+        update_cache: yes
+
+# test page
