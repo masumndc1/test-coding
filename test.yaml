@@ -36,7 +36,7 @@
      command: "systemctl daemon-reload"
 
    - name: "Ensure nginx service is running"
-     service: name=nginx state=running
+     service: name=nginx state=restarted
 
    - name: "Installing apache2"
      apt: deb=apache2.deb
