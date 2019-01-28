@@ -1,0 +1,51 @@
+--- 
+- hosts: localhost
+  become: yes
+
+  tasks:
+   - name: "installing some tools"
+     apt: name=item update_cache=yes
+     with_items:
+       - gcc
+       - pcre2-utils
+       - libpcre3-dev
+       - zlib1g
+       - zlib1g-dev
+       - make
+
+   - name: "nginx git repo downloading"
+     git: 
+       repo=https://salsa.debian.org/nginx-team/nginx.git
+       dest=/root/nginx-git
+       version=jessie
+   
+   - shell: "cd /root/nginx-git/ && ./configure"
+   - shell: "cd /root/nginx-git/ && make"
+   - shell: "cd /root/nginx-git/ && make install"
+
+   - name: "changing configuration file nginx.conf of nginx"
+     copy: src=nginx/nginx.conf dest=/usr/local/nginx/conf/nginx.conf mode=0644
+  
+   - name: "copying binary file of nginx"
+     copy: src=/usr/local/nginx/sbin/nginx dest=/usr/sbin/nginx mode=0755
+
+   - name: "copy service file of nginx"
+     copy: src=nginx/nginx.service dest=/lib/systemd/system/nginx.service mode=0644
+
+   - name: "nginx systemctl daemon reload"
+     command: "systemctl daemon-reload"
+
+   - name: "Ensure nginx service is running"
+     service: name=nginx state=running
+
+   - name: "Installing apache2"
+     apt: deb=apache2.deb
+    
+   - name: "configuration file ports.conf of apache2 changing"
+     copy: src=apache2/ports.conf dest=/etc/apache2/ports.conf mode=0644
+
+   - name: "configuration file default.conf of apache2 changing"
+     copy: src=apache2/000-default.conf dest=/etc/apache2/sites-enabled/000-default.conf mode=0644
+
+   - name: "Ensure apache2 service is running"
+     service: name=apache2 state=running
