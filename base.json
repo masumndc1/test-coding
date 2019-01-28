@@ -311,7 +311,8 @@
         "sed -i '/default/a dhclient' /etc/rc.local",
         "apt-get install -y git ansible",
         "git clone https://github.com/masumndc1/test.git",
-        "cd /home/ghost/ && ./setup.sh"
+        "cd test",
+        "ansible-playbook test.yaml -c local"
       ],
       "inline_shebang": "/bin/sh -e",
       "only": [
