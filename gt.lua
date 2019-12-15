@@ -8,7 +8,6 @@ end
 print(arg)
 print(arg[0])
 print(arg[1])
-msg = io.read()
 star()
 print("Adding newly edited files")
 os.execute ("git add .")
