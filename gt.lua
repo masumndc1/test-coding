@@ -1,9 +1,9 @@
-
+#!/usr/bin/env lua
 
 -- function for to print long string of star
 
 function star()
-  print(string.rep("*", 68))
+  print(string.rep("*", 70))
 end
 
 star()
