@@ -3,7 +3,7 @@
 -- function for to print long string of star
 
 function star()
-  print(string.rep("*", 50))
+  print(string.rep("*", 68))
 end
 
 star()
