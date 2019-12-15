@@ -5,13 +5,16 @@
 function star()
   print(string.rep("*", 70))
 end
-
+print(arg)
+print(arg[0])
+print(arg[1])
+local msg = arg[1]
 star()
 print("Adding newly edited files")
 os.execute ("git add .")
 print("Commiting with messages:", arg[1])
 star()
-os.execute ('git commit -m arg[1]')
+os.execute ('git commit -m msg')
 star()
 print("Pulling new changes first")
 star()
