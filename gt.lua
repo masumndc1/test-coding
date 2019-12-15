@@ -9,7 +9,7 @@ end
 star()
 print("Adding newly edited files")
 os.execute ("git add .")
-print("Commiting with messages: arg[1]")
+print("Commiting with messages:", arg[1])
 star()
 os.execute ("git commit -m arg[1]")
 star()
