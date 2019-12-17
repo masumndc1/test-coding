@@ -7,12 +7,13 @@ end
 
 function git_operation(msg)
   long_string()
+  print("pulling down first")
 --  os.execute ('ping -c 10 ' .. msg)
   os.execute ('git add .')
   os.execute ('git commit -m ' .. msg )
+  print("pushing now to upstream")
+  os.execute ('git push origin master')
   long_string()
 end
 
-
--- git_operation(arg[1])
 git_operation(arg[1])
