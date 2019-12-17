@@ -1,6 +1,11 @@
 #!/usr/bin/env lua
 
--- function for to print long string of star
+--[[ 
+ function for to print long string of star
+ honestly this was not a good way to pass
+ string value in function
+--]]
+
 function long_string()
   print(string.rep("-", 70))
 end
@@ -8,7 +13,6 @@ end
 function git_operation(msg)
   long_string()
   print("pulling down first")
---  os.execute ('ping -c 10 ' .. msg)
   os.execute ('git add .')
   print("commiting with msg")
   os.execute ("git commit -m '" .. msg .. "' ")
@@ -21,4 +25,5 @@ end
  string=arg[1]
  print(string)
 --]]
+
 git_operation(arg[1])
