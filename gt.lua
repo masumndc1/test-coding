@@ -4,7 +4,9 @@
  function for to print long string of star
  honestly this was not a good way to pass
  string value in function
+ http://lua-users.org/lists/lua-l/2010-08/msg00300.html
 --]]
+
 
 function long_string()
   print(string.rep("-", 70))
