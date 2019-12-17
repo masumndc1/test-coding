@@ -1,25 +1,18 @@
 #!/usr/bin/env lua
 
 -- function for to print long string of star
-
-function star()
-  print(string.rep("*", 70))
+function long_string()
+  print(string.rep("-", 70))
 end
-print(arg)
-print(arg[0])
-print(arg[1])
-star()
-print("Adding newly edited files")
-os.execute ("git add .")
-print("Commiting with messages:", arg[1])
-star()
-os.execute ('git commit' )
-star()
-print("Pulling new changes first")
-star()
-os.execute ("git pull")
-star()
-print("Pushing to upstream")
-star()
-os.execute("git push origin master")
-star()
+
+function git_operation(msg)
+  long_string()
+--  os.execute ('ping -c 10 ' .. msg)
+  os.execute ('git add .')
+  os.execute ('git commit -m ' .. msg )
+  long_string()
+end
+
+
+-- git_operation(arg[1])
+git_operation(arg[1])
