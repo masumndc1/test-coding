@@ -7,7 +7,6 @@
  http://lua-users.org/lists/lua-l/2010-08/msg00300.html
 --]]
 
-
 function long_string()
   print(string.rep("-", 70))
 end
@@ -16,7 +15,6 @@ function git_operation(msg)
   long_string()
 --[[
 I want to print the output in colored font.
-this is actually found in python. lets try in lua 
 the whole color scheme is coming from colr.png of
 this folder. the general coler codes are below
 print('\27[31mred')
