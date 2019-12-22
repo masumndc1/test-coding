@@ -28,6 +28,7 @@ print('\27[36mlightgreen')
 print('\27[37mwhite')
 --]]
   print("\27[31m pulling down first")
+  os.execute ('git pull')
   os.execute ('git add .')
   print("\27[32m commiting with msg")
   os.execute ("git commit -m '" .. msg .. "' ")
