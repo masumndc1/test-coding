@@ -14,11 +14,24 @@ end
 
 function git_operation(msg)
   long_string()
-  print("pulling down first")
+--[[
+I want to print the output in colored font.
+this is actually found in python. lets try in lua 
+the whole color scheme is coming from colr.png of
+this folder. the general coler codes are below
+print('\27[31mred')
+print('\27[32mgreen')
+print('\27[33myellow')
+print('\27[34mblue')
+print('\27[35mpurple')
+print('\27[36mlightgreen')
+print('\27[37mwhite')
+--]]
+  print("\27[31m pulling down first")
   os.execute ('git add .')
-  print("commiting with msg")
+  print("\27[32m commiting with msg")
   os.execute ("git commit -m '" .. msg .. "' ")
-  print("pushing now to upstream")
+  print("\27[34m pushing now to upstream")
   os.execute ('git push origin master')
   long_string()
 end
