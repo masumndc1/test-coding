@@ -33,14 +33,8 @@ print('\27[37mwhite')
   print("\27[32m commiting with msg")
   os.execute ("git commit -m '" .. msg .. "' ")
   print("\27[34m pushing now to upstream")
-  print("pushing now to upstream")
   os.execute ('git push origin master')
   long_string()
 end
-
---[[ 
- string=arg[1]
- print(string)
---]]
 
 git_operation(arg[1])
