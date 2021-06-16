@@ -1,5 +1,5 @@
 pipeline {
-    agent { test-ubuntu16 }
+    agent { label 'master' }
     stages {
         stage('build') {
             steps {
