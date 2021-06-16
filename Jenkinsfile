@@ -1,5 +1,5 @@
 pipeline {
-    agent { test-ubuntu20 }
+    agent { label 'test-ubuntu20' }
     stages {
         stage('build') {
             steps {
