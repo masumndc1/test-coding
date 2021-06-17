@@ -4,6 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python test.py'
+                echo "showing ip address"
+                sh 'ifconfig'
             }
         }
     }
