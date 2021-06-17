@@ -5,6 +5,8 @@ pipeline {
             steps {
                 echo "printing hellow world"
                 sh 'python test.py'
+                echo "printing IP add"
+                sh 'ifconfig'
             }
         }
 
