@@ -5,6 +5,16 @@ pipeline {
             steps {
                 sh 'python test.py'
             }
+
+        stage('deploy') {
+            steps {
+                sh 'python --version'
+            }
+
+        stage('production') {
+            steps {
+                sh 'echo "hello world"'
+            }
         }
     }
 }
