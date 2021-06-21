@@ -1,7 +1,7 @@
 pipeline {
     stages {
         stage('build') {
-          agent ( label 'test-ubuntu16')
+          agent { label 'test-ubuntu16' }
             steps {
                 echo "printing hellow world"
                 sh 'python test.py'
@@ -10,9 +10,8 @@ pipeline {
             }
         }
 
-
         stage('deploy') {
-          agent ( label 'test-ubuntu18')
+          agent { label 'test-ubuntu18' }
             steps {
                 echo "printing python version"
                 sh 'python --version'
@@ -20,7 +19,7 @@ pipeline {
         }
 
         stage('production') {
-          agent ( label 'test-ubuntu20')
+          agent { label 'test-ubuntu20' }
             steps {
                 echo "greetings to jenkins"
                 sh 'echo "hi jenkins"'
