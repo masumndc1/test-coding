@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 
-def generator_practise(nums):
-	"""generator practise"""
+class GeneratorPractise:
 
-	for i in nums:
-		yield (i*i)
+    """generator practise"""
 
-my_nums = generator_practise([1,2,3,4,5])
+    def __init__(self, num):
+        self.num = num
 
-for num in my_nums:
-	print(num)
+    def generator_list(self):
+        my_list = []
+        
+        for i in self.num:
+            my_list.append(i*i)
+        return my_list
