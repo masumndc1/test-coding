@@ -28,7 +28,7 @@ class GitOperation():
      self._add_new_files()
 
   def _add_new_files(self):
-     print(self._red)
+     print("\27[35m pulling down first \27[37m")
      retcode=subprocess.check_call("git add .",shell=True)
      self._commit() if not retcode else sys.exit("could not add files")
      print(self._end)
