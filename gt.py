@@ -21,7 +21,7 @@ class GitOperation():
      #self._bold = '\033[1m'
      #self._italics = '\033[3m'
      #self._underline = '\033[4m'
-     #self._end = '\033[0m'
+     self._end = '\033[0m'
 
      self.msg = sys.argv[1]
      self.branch = sys.argv[2]
@@ -31,7 +31,7 @@ class GitOperation():
      print(self._red)
      retcode=subprocess.check_call("git add .",shell=True)
      self._commit() if not retcode else sys.exit("could not add files")
-     #print(self._end)
+     print(self._end)
 
   def _commit(self):
      print(self._green)
