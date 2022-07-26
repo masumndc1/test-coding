@@ -29,7 +29,7 @@ class GitOperation():
      self._add_new_files()
 
   def _add_new_files(self):
-     print(self._megenda)
+     print("\033[0m 1;35;40m]")
      retcode=subprocess.check_call("git add .",shell=True)
      self._commit() if not retcode else sys.exit("could not add files")
      print(self._end)
