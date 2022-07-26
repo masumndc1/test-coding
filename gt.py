@@ -15,6 +15,7 @@ class GitOperation():
   def __init__(self, msg: str, branch: str):
 
      # various color codes
+     self._megenda = "\033[0m 1;35;40m]"
      self._red = '\27[31m'
      self._green = '\27[32m'
      self._blue = '\27[34m'
@@ -28,7 +29,7 @@ class GitOperation():
      self._add_new_files()
 
   def _add_new_files(self):
-     print('\27[35m' + "pulling down first" + '\27[37m')
+     print(self._megenda)
      retcode=subprocess.check_call("git add .",shell=True)
      self._commit() if not retcode else sys.exit("could not add files")
      print(self._end)
