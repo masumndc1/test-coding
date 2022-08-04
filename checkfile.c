@@ -16,10 +16,10 @@ int
 main(int argc, char **argv) {
     int test=isValidFile(argv[1]);
     if (test) {
-        print("file exists");
+        printf("file exists\n");
     }
     else {
-        print("file does not exist");
+        printf("file does not exist\n");
     }
     return 0;
 }
