@@ -1,11 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-     char s1[30] = "string 1";
-     char s2[30] = "string 2 : I’m gonna copied into s1";
-     /* this function has copied s2 into s1*/
-     strcpy(s1,s2);
-     printf("String s1 is: %s", s1);
-     return 0;
+static int c_swap (lua_State *L) {
+    //check and fetch the arguments
+    double arg1 = luaL_checknumber (L, 1);
+    double arg2 = luaL_checknumber (L, 2);
+
+    //push the results
+    lua_pushnumber(L, arg2);
+    lua_pushnumber(L, arg1);
+
+    //return number of results
+    return 2;
 }
