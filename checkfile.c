@@ -15,7 +15,7 @@ int isValidFile(char* path)
 int 
 main(int argc, char **argv) {
     int test=isValidFile(argv[1]);
-    if(test) {
+    if (test) {
         print("file exists");
     }
     else {
