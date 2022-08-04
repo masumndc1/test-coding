@@ -14,11 +14,12 @@ int isValidFile(char* path)
 
 int 
 main(int argc, char **argv) {
-    int test=isValidFile(argv[1])
+    int test=isValidFile(argv[1]);
     if(test) {
-        print("file exists")
+        print("file exists");
     }
     else {
-        print("file does not exist")
+        print("file does not exist");
     }
+    return 0;
 }
