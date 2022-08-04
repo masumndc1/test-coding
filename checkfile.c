@@ -12,6 +12,24 @@ int isValidFile(char* path)
     }
 }
 
+static int isValidFile (lua_State *L) {
+    double arg = luaL_checknumber (L, 1);
+    lua_pushnumber(L, isValidFile(char* path);
+    return 1;
+}
+
+//library to be registered
+static const struct luaL_Reg mylib [] = {
+      {"isValidFile", isValidFile} /* names can be different */
+      {NULL, NULL}                 /* sentinel */
+};
+
+//name of this function is not flexible
+int luaopen_mylib (lua_State *L){
+    luaL_newlib(L, mylib);
+    return 1;
+}
+
 int 
 main(int argc, char **argv) {
     int test=isValidFile(argv[1]);
