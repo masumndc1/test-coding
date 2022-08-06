@@ -1,6 +1,6 @@
 #!/usr/local/bin/lua
 
-local operations = require "operations"
+-- [[local operations = require "operations"
 -- this is a comment
 -- this is another line of comment
 -- this is the i like more
@@ -50,5 +50,9 @@ end
 
 -- if file_exists(arg[1]) then print("this file exists") else print("does not exists") end
 
-operations.fileexists(arg[1])
-operations.runcommand("ping -c 2 yahoo.com")
+--operations.fileexists(arg[1])
+--operations.runcommand("ping -c 2 yahoo.com")
+--]]
+require("fromc")
+ping_me(3, "www.google.com")
+
