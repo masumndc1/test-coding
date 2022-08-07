@@ -1,5 +1,6 @@
 #!/usr/local/bin/lua
 
+local _G = _G
 -- [[local operations = require "operations"
 -- this is a comment
 -- this is another line of comment
