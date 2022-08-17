@@ -11,7 +11,7 @@ int isValidFile(char* path)
         return 0;
     }
 }
-
+/*
 static int isValidFile (lua_State *L) {
     double arg = luaL_checknumber (L, 1);
     lua_pushnumber(L, isValidFile(char* path);
@@ -25,10 +25,12 @@ static const struct luaL_Reg mylib [] = {
 };
 
 //name of this function is not flexible
+/*
 int luaopen_mylib (lua_State *L){
     luaL_newlib(L, mylib);
     return 1;
 }
+*/
 
 int 
 main(int argc, char **argv) {
