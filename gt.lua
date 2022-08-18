@@ -16,7 +16,7 @@ end
 
 local git_operation = function(msg)
   long_string()
-  print(purple .."Pulling down first \27[37m" .. white)
+  print(purple .."Pulling down first" .. white)
   os.execute ('git pull')
   os.execute ('git add .')
   print(green .. "Commiting with msg '" .. msg .. white)
