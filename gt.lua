@@ -6,12 +6,13 @@ local blue = '\27[34m'
 local purple = '\27[35m'
 local white = '\27[37m'
 
-local long_string = function(n)
-  print(string.rep("-", n))
+local long_string = function()
+  local n = io.popen("tput cols")
+  print(string.rep("-", n:read()))
 end
 
 local git_operation = function(msg)
-  long_string(70)
+  long_string()
   print(purple .."Pulling down first \27[37m" .. white)
   os.execute ('git pull')
   os.execute ('git add .')
@@ -19,7 +20,7 @@ local git_operation = function(msg)
   os.execute ("git commit -m '" .. msg .. "' ")
   print(blue .. "Pushing now to master" .. white)
   os.execute ('git push origin master')
-  long_string(70)
+  long_string()
 end
 
 function main()
