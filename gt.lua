@@ -2,7 +2,7 @@
 
 -- I want to print the output in colored font.
 -- local red = '\27[31m'
--- local yellow = '\27[33m'
+local yellow = '\27[33m'
 local lightgreen = '\27[36m'
 local green = '\27[32m'
 local blue = '\27[34m'
@@ -27,6 +27,11 @@ local git_operation = function(msg)
 end
 
 function main()
+    if #arg < 1 then
+        print( yellow .. "usage: ./gt.lua \"msg\"" .. white)
+        os.exit()
+    end
+
     if arg[1] then
         msg = arg[1]
         git_operation(msg)
