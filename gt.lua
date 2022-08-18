@@ -16,11 +16,11 @@ end
 
 local git_operation = function(msg)
   long_string()
-  print(purple .."Pulling down first" .. white)
-  os.execute ('git pull --rebase')
   os.execute ('git add .')
   print(green .. "Commiting with msg '" .. msg .. white)
   os.execute ("git commit -m '" .. msg .. "' ")
+  print(purple .."Pulling down now" .. white)
+  os.execute ('git pull --rebase')
   print(blue .. "Pushing now to master" .. white)
   os.execute ('git push origin master')
   long_string()
