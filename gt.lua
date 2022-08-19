@@ -26,14 +26,14 @@ local git_operation = function(msg)
   long_string()
 end
 
-function main()
+local main = function ()
     if #arg < 1 then
         print( yellow .. "usage: ./gt.lua \"msg\"" .. white)
         os.exit()
     end
 
     if arg[1] then
-        msg = arg[1]
+        local msg = arg[1]
         git_operation(msg)
     end
 end
