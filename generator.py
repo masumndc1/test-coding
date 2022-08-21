@@ -9,7 +9,7 @@ class GeneratorPractise:
 
     def generator_list(self):
         my_list = []
-        
+        # comment line
         for i in self.num:
             my_list.append(i*i)
         return my_list
