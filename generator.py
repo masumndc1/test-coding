@@ -24,3 +24,7 @@ class GeneratorPractise:
         for i in self.num:
             my_list.append(i*i)
         return my_list
+
+
+if condition:
+    pass
