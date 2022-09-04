@@ -11,24 +11,24 @@ local white = '\27[37m'
 
 local long_string = function()
   local n = io.popen("tput cols")
-  print(lightgreen .. string.rep("-", n:read()))
+  print(color.lightgreen .. string.rep("-", n:read()))
 end
 
 local git_operation = function(msg)
   long_string()
   os.execute ('git add .')
-  print(green .. "Commiting with msg '" .. msg .. white)
+  print(color.green .. "Commiting with msg '" .. msg .. color.white)
   os.execute ("git commit -m '" .. msg .. "' ")
-  print(purple .."Pulling down now" .. white)
+  print(color.purple .."Pulling down now" .. color.white)
   os.execute ('git pull --rebase')
-  print(blue .. "Pushing now to master" .. white)
+  print(color.blue .. "Pushing now to master" .. color.white)
   os.execute ('git push origin master')
   long_string()
 end
 
 local main = function ()
     if #arg < 1 then
-        print( yellow .. "usage: ./gt.lua \"msg\"" .. white)
+        print( color.yellow .. "usage: ./gt.lua \"msg\"" .. color.white)
         os.exit()
     end
 
