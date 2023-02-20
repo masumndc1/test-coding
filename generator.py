@@ -4,8 +4,9 @@
 import os
 import sys
 
-if sys.argv < 1:
+if sys.argv != 2:
     print("your must provide args")
+    print("what is your OS", os.uname())
 
 # something to add here
 
@@ -22,9 +23,5 @@ class GeneratorPractise:
         my_list = [] or etc
         # comment line
         for i in self.num:
-            my_list.append(i*i)
+            my_list.append(i * i)
         return my_list
-
-
-if condition:
-    pass
