@@ -5,10 +5,10 @@ require_relative('sort_by_name')
 require_relative('colorful')
 
 def main
-  file = Findfiles.new.find_files
-  file = SortByName.new(file).sort_by_name
+  file = Findfiles.find_files
+  file = SortByName.sort_by_name(file)
   file.each do |f|
-    ShowColor.new.show_color(f)
+    ShowColor.show_color(f)
   end
 end
 

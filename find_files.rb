@@ -1,10 +1,11 @@
-class Findfiles
-  def initialize
+#!/usr/bin/env ruby
+
+Findfiles = Class.new
+
+class << Findfiles
+  def find_files
     @files = []
     @names = ARGV[0] || Dir.pwd
-  end
-
-  def find_files
     Dir.entries(@names).each do |name|
       next if ['.', '..'].include?(name)
       next if File.directory?(name)

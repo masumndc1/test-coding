@@ -1,11 +1,10 @@
 #!/usr/bin/env ruby
 
-class SortByName
-  def initialize(files)
-    @files = files or None
-  end
+SortByName = Class.new
 
-  def sort_by_name
+class << SortByName
+  def sort_by_name(files)
+    @files = files or None
     return unless @files
 
     @ext = %w[py rb lua txt c]

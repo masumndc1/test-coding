@@ -2,9 +2,9 @@
 
 require('colorize')
 
-class ShowColor
-  def initialize; end
+ShowColor = Class.new
 
+class << ShowColor
   def show_color(names)
     names.each do |name|
       if name.end_with?('c')
