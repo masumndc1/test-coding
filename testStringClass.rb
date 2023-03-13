@@ -18,12 +18,20 @@ puts s << t
 a = %w[a b c d]
 puts a
 
+y = 0
 begin
   x = 10
-  puts x / 0
-rescue ZeroDivisionError
+  puts x / y
+rescue ZeroDivisionError => e
   puts %(you can not divide it)
-  puts($!.class)
-  puts($!)
+  puts(e.class)
+  puts(e)
+  puts(e.backtrace)
 end
 puts %(you are done)
+
+c = proc do |x|
+  puts x * x
+end
+
+c.call(10)
