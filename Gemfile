@@ -1,2 +1,5 @@
 source 'https://rubygems.org'
 gem 'net-ssh'
+gem 'pry'
+gem 'pry-byebug'
+gem 'pry-doc'
