@@ -4,26 +4,22 @@ require('optparse')
 require_relative('execute')
 
 options = {}
-OptionParser.new do |opts|
-  opts.banner = %(
-  Usage: command.rb [options]
-  - c    --command    command to pass
-  - h    --help       show help menu
-  )
+opt = OptionParser.new do |opts|
+  opts.banner = %(Usage: command.rb [options])
 
-  opts.on('-c', '--command') do |c|
+  opts.on('-c', '--command COMMAND', 'command') do |c|
     options[:command] = c
   end
 
-  opts.on('-h', '--help') do |h|
-    options[:help] = h
-    puts opts.banner
+  opts.on_tail('-h', '--help', 'show this message') do
+    puts opts.help
+    exit
   end
-end.parse!
+end
+opt.parse!
 
-def main
-  cmd = ARGV[0]
+def main(cmd)
   puts Execute.do_cmd(cmd)
 end
 
-main if __FILE__ == $PROGRAM_NAME
+main(options[:command]) if __FILE__ == $PROGRAM_NAME
