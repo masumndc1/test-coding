@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'net-sftp'
 gem 'net-ssh'
 gem 'pry'
 gem 'pry-byebug'
