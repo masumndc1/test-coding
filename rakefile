@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+task default: %i[test list]
+
+task :test do
+  puts "I'm alive"
+end
+
+task :list do
+  puts 'Content of gem-file'
+  sh 'cat -n Gemfile'
+end
