@@ -1,22 +1,30 @@
 #!/usr/bin/env ruby
 
+def osping
+  uname = `uname -a`
+  return '/sbin/ping' if uname.include?('Darwin')
+  return '/usr/bin/ping' if uname.include?('Linux')
+end
+
 def exec
-  if (ARGV[0] && ARGV[0].instance_of?(String)) && (ARGV[1] && ARGV[1].instance_of?(String))
+  if ARGV[0] && ARGV[1]
     num = ARGV[0].to_i
     url = ARGV[1]
-    `/usr/bin/ping -c num #{url}`
+    ping = osping
+    cmd = format(%(%s -c %d %s), ping, num, url)
+
+    puts `#{cmd}`
   else
     puts 'could not ping'
   end
 end
 
 def main
-  # jputs 'programe_name 4 "www.google.com"' unless ARGV.length < 1
-  # exit
-  puts ARGV[0].class
-  puts ARGV[0]
+  unless ARGV[0]
+    puts 'programe_name num url'
+    exit
+  end
 
-  puts ARGV[1].class
   exec
 end
 
