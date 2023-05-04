@@ -1,31 +1,36 @@
 #!/usr/bin/env ruby
 
-def osping
-  uname = `uname -a`
-  return '/sbin/ping' if uname.include?('Darwin')
-  return '/usr/bin/ping' if uname.include?('Linux')
-end
+Exec = Class.new
 
-def exec
-  if ARGV[0] && ARGV[1]
+class << Exec
+  def notify
+    puts 'programe_name num url'
+    puts 'ruby rb-ping.rb 1 www.google.com'
+  end
+
+  def osping
+    uname = `uname -a`
+    return '/sbin/ping' if uname.include?('Darwin')
+    return '/usr/bin/ping' if uname.include?('Linux')
+  end
+
+  def exec
     num = ARGV[0].to_i
     url = ARGV[1]
     ping = osping
     cmd = format(%(%s -c %d %s), ping, num, url)
 
     puts `#{cmd}`
-  else
-    puts 'could not ping'
   end
 end
 
 def main
-  unless ARGV[0]
-    puts 'programe_name num url'
+  unless ARGV[0] && ARGV[1].include?('www')
+    Exec.notify
     exit
   end
 
-  exec
+  Exec.exec
 end
 
 main if __FILE__ == $PROGRAM_NAME
