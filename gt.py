@@ -43,9 +43,9 @@ class GitOperation():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 3:
+    if len(sys.argv) >= 2:
         msg = sys.argv[1]
-        branch = sys.argv[2]
+        branch = sys.argv[2] or "master"
         GitOperation(msg, branch)
     else:
         print(GitOperation.__doc__)
