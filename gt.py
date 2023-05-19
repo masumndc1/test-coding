@@ -65,7 +65,7 @@ class GitOperation(Color):
         print(color + "-" * col + self.reset)
  
     def _add_new_files(self):
-        self._term_size(self.yellow)
+        self._term_size(self.blue)
         retcode = subprocess.call("git add .", shell=True)
         self._commit() if not retcode else sys.exit("could not add files")
 
