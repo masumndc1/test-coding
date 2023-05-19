@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'colorize'
 gem 'memoize'
+gem 'neovim'
 gem 'net-sftp'
 gem 'net-ssh'
 gem 'pry'
