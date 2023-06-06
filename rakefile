@@ -1,12 +1,15 @@
 #!/usr/bin/env ruby
 
-task default: %i[test list]
+task default: %i[test stones]
 
+desc 'testing alive-ness'
 task :test do
   puts "I'm alive"
 end
 
-task :list do
+desc 'Install gems'
+task :stones do
   puts 'Content of gem-file'
   sh 'cat -n Gemfile'
+  sh 'bundle install'
 end
