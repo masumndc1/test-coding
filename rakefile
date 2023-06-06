@@ -11,5 +11,4 @@ desc 'Install gems'
 task :stones do
   puts 'Content of gem-file'
   sh 'cat -n Gemfile'
-  sh 'bundle install'
 end
