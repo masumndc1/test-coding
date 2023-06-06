@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'bundle'
 gem 'colorize'
 gem 'memoize'
 gem 'neovim'
