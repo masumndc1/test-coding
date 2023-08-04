@@ -1,0 +1,11 @@
+---
+hosts:
+  localhost:
+    platform: mac
+    version: air
+    os: macos
+
+  asus:
+    platform: asus
+    version: k42
+    os: opensuse
