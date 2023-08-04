@@ -2,7 +2,6 @@
 
 import subprocess
 
-
 out = subprocess.getoutput("sudo lxc list -f csv")
 host = {}
 
