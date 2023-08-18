@@ -29,4 +29,4 @@ cd ./packer-build/ && bash script/vbox.sh template/ubuntu/16.04_xenial/base.json
 echo -e "there are two webservers is running"
 echo -e "one is nginx, running on interface:8081"
 echo -e "another is apache2, running on interface:8080"
-echo -e ""
+echo -e "Done"
