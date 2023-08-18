@@ -2,6 +2,7 @@
 
 local _G = _G
 local commands = require("commands")
+local vars = require("vars")
 
 for n in pairs(_G) do
 	print(n)
@@ -27,6 +28,7 @@ print("the types are", type(_Multi_lines), type(_Integer))
 
 -- an example of while
 
+--[[
 local num = 1
 while num < 10 do
 	print(num)
@@ -62,5 +64,10 @@ end
 --operations.runcommand("ping -c 2 yahoo.com")
 --]]
 
--- commands.ping(3, "www.google.com")
+if type(vars.nm_ping == "string") and type(vars.nm_ping == "number") then
+	commands.ping(vars.nm_ping, vars.site)
+end
+
+print(commands.os_path_exists("/usr/bin/apt"))
+print(vars.term)
 print(commands.find_pkg())

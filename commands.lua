@@ -16,4 +16,12 @@ function commands.find_pkg()
 	end
 end
 
+function commands.os_path_exists(file)
+	if io.open(file, "r") then
+		return true
+	else
+		return false
+	end
+end
+
 return commands
