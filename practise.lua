@@ -17,14 +17,11 @@ end
 -- written like bellow
 --
 
-_Integer = 5
-_Multi_lines = [[
-    so this is whole lines of comment
-    whole lines of comment
+local pkg_comm = [[
+    sudo %s update; sudo %s search %s
 ]]
 
-print("\n" .. _Multi_lines)
-print("the types are", type(_Multi_lines), type(_Integer))
+os.execute((string.format(pkg_comm, vars.os, vars.os, vars.pkg)))
 
 -- an example of while
 
@@ -63,10 +60,9 @@ end
 --operations.fileexists(arg[1])
 --operations.runcommand("ping -c 2 yahoo.com")
 --]]
-
-if type(vars.nm_ping == "string") and type(vars.nm_ping == "number") then
-	commands.ping(vars.nm_ping, vars.site)
-end
+assert(type(vars.site) == "string", "pass string value")
+assert(type(vars.nm_ping) == "number", "pass number")
+commands.ping(vars.nm_ping, vars.site)
 
 print(commands.os_path_exists("/usr/bin/apt"))
 print(vars.term)
