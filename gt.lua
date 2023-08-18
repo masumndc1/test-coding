@@ -17,7 +17,7 @@ local git_operation = function(msg)
 	os.execute("git commit -m '" .. msg .. "' ")
 	print(color.purple .. "Pulling down now" .. color.white)
 	os.execute("git pull --rebase")
-	print(color.blue .. "Pushing now to master" .. color.white)
+	print(color.blue .. "Pushing now to master" .. color.purple)
 	os.execute("git push origin master")
 	long_string()
 end
