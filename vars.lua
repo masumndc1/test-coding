@@ -8,5 +8,6 @@ vars.nm_ping = 3
 vars.os = "port"
 vars.pkg = "htop"
 vars.term = os.getenv("TERM")
+vars.shell = os.getenv("SHELL")
 
 return vars
