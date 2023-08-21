@@ -112,3 +112,7 @@ end
 print(shell())
 print(commands.find_pkg())
 print(commands.os())
+local ret = commands.run_command("ls -la")
+if ret then
+	print("command run successfully")
+end
