@@ -3,6 +3,7 @@
 -- local _G = _G
 local commands = require("commands")
 local vars = require("vars")
+local longest_line = require("longest_line")
 
 --[[
 for n in pairs(_G) do
@@ -116,3 +117,7 @@ local ret = commands.run_command("ls -la")
 if ret then
 	print("command run successfully")
 end
+
+local long_nm, line = longest_line.nm_line("sort.lua")
+print(line)
+print(type(long_nm))
