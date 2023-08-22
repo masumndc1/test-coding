@@ -4,10 +4,8 @@
 local color = require("color")
 
 local long_string = function()
-	local n = io.popen("tput cols")
-	if n then
-		print(color.lightgreen .. string.rep("-", n:read()))
-	end
+	local n = assert(io.popen("tput cols"))
+	print(color.lightgreen .. string.rep("-", n:read()))
 end
 
 local git_operation = function(msg)
