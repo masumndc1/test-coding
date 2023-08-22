@@ -9,7 +9,6 @@ local long_string = function()
 end
 
 local git_operation = function(msg)
-	long_string()
 	os.execute("git add .")
 	print(color.green .. "Commiting with msg '" .. msg .. color.white)
 	os.execute("git commit -m '" .. msg .. "' ")
@@ -28,7 +27,9 @@ local main = function()
 
 	if arg[1] then
 		local msg = arg[1]
+		long_string()
 		git_operation(msg)
+		long_string()
 	end
 end
 
