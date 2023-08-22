@@ -1,9 +1,13 @@
 #!/usr/bin/env lua
 
+local longest_line = require("longest_line")
+
 local sorted_file = function(file)
+	local longest_char_num, _ = longest_line.nm_line(file)
 	local srtd_file = {}
 
 	-- show file content before sorted
+	print(string.rep("_", longest_char_num))
 	print("\n" .. "--- before sort ---")
 	local fl = assert(io.open(file, "r"))
 	print(fl:read("a"))
@@ -21,6 +25,7 @@ local sorted_file = function(file)
 	for _, v in pairs(srtd_file) do
 		print(v)
 	end
+	print(string.rep("_", longest_char_num))
 end
 
 local main = function()
