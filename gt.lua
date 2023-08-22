@@ -9,14 +9,23 @@ local long_string = function()
 end
 
 local git_operation = function(msg)
-	os.execute("git add .")
-	print(color.green .. "Commiting with msg '" .. msg .. color.white)
-	os.execute("git commit -m '" .. msg .. "' ")
-	print(color.purple .. "Pulling down now" .. color.white)
-	os.execute("git pull --rebase")
-	print(color.blue .. "Pushing now to master" .. color.purple)
-	os.execute("git push origin master")
-	long_string()
+	local branch = arg[2] or "master"
+	local git_add = "git add ."
+	local git_commit = "git commit -m '" .. msg .. "' "
+	local git_pull = "git pull --rebase"
+	local git_push = "git push origin " .. branch
+	if os.execute(git_add) then
+		print("Added new changes")
+	end
+	if os.execute(git_commit) then
+		print(color.green .. "Committed with msg '" .. msg .. color.white)
+	end
+	if os.execute(git_pull) then
+		print(color.purple .. "Pulled down changes from upstream" .. color.white)
+	end
+	if os.execute(git_push) then
+		print(color.blue .. "Pushed to " .. branch .. color.purple)
+	end
 end
 
 local main = function()
