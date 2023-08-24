@@ -13,6 +13,7 @@ local git_operation = function(commit_msg, branch)
 	local git_commit = "git commit -m '" .. commit_msg .. "' "
 	local git_pull = "git pull --rebase"
 	local git_push = "git push origin " .. branch
+
 	if os.execute(git_add) then
 		print("Added new changes")
 	end
