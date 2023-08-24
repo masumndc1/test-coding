@@ -8,17 +8,16 @@ local long_string = function()
 	print(color.lightgreen .. string.rep("-", n:read()))
 end
 
-local git_operation = function(msg)
-	local branch = arg[2] or "master"
+local git_operation = function(commit_msg, branch)
 	local git_add = "git add ."
-	local git_commit = "git commit -m '" .. msg .. "' "
+	local git_commit = "git commit -m '" .. commit_msg .. "' "
 	local git_pull = "git pull --rebase"
 	local git_push = "git push origin " .. branch
 	if os.execute(git_add) then
 		print("Added new changes")
 	end
 	if os.execute(git_commit) then
-		print(color.green .. "Committed with msg '" .. msg .. color.white)
+		print(color.green .. "Committed with msg '" .. commit_msg .. color.white)
 	end
 	if os.execute(git_pull) then
 		print(color.purple .. "Pulled down changes from upstream" .. color.white)
@@ -28,18 +27,16 @@ local git_operation = function(msg)
 	end
 end
 
-local main = function()
-	if #arg < 1 then
-		print(color.yellow .. 'usage: ./gt.lua "msg"' .. color.white)
-		os.exit()
-	end
-
-	if arg[1] then
-		local msg = arg[1]
-		long_string()
-		git_operation(msg)
-		long_string()
-	end
+local main = function(commit_msg, branch)
+	long_string()
+	git_operation(commit_msg, branch)
+	long_string()
 end
 
-main()
+if arg[1] then
+	local branch = arg[2] or "master"
+	main(arg[1], branch)
+else
+	print(color.yellow .. 'usage: ./gt.lua "msg"' .. color.white)
+	os.exit()
+end
