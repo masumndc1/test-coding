@@ -3,10 +3,10 @@
 local commands = {}
 
 function commands.ping(num, site)
-	os.execute("ping -c" .. " " .. num .. " " .. site)
+	os.execute("ping -c " .. num .. " " .. site)
 end
 
-function commands.find_pkg()
+function commands.pkg_mgr()
 	if io.open("/usr/bin/apt", "r") then
 		return "apt"
 	elseif io.open("/usr/bin/yum", "r") then
@@ -61,6 +61,18 @@ end
 function commands.long_string()
 	local term_in_colm = assert(io.popen("tput cols"))
 	return term_in_colm:read()
+end
+
+function commands.check_exist_pkg(name)
+	-- normally any installed package's binary resides in /usr/bin
+	local path = string.format("/usr/bin/" .. name)
+	local f = io.open(path, "r")
+	if f ~= nil then
+		io.close(f)
+		return true
+	else
+		return false
+	end
 end
 
 return commands
