@@ -58,4 +58,9 @@ function commands.run_command(cmd)
 	end
 end
 
+function commands.long_string()
+	local term_in_colm = assert(io.popen("tput cols"))
+	return term_in_colm:read()
+end
+
 return commands
