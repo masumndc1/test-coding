@@ -2,7 +2,7 @@
 # this is a simple python script to automate
 # git pull, commit and push to github.
 
-import os
+
 import shutil
 import sys
 import subprocess
@@ -35,7 +35,7 @@ class Color():
         elif color == 'blue':
             return self.blue
         elif color == 'magenta':
-            return self.magenta
+            return self.megenta
         elif color == 'cyan':
             return self.cyan
         elif color == 'white':
@@ -44,7 +44,7 @@ class Color():
             return self.underline
         elif color == 'reset':
             return self.reset
-        else: 
+        else:
             print("unknown color")
 
 
@@ -63,7 +63,7 @@ class GitOperation(Color):
     def _term_size(self, color):
         col, _ = shutil.get_terminal_size()
         print(color + "-" * col + self.reset)
- 
+
     def _add_new_files(self):
         self._term_size(self.blue)
         retcode = subprocess.call("git add .", shell=True)
