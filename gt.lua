@@ -18,7 +18,7 @@ local git_operation = function(commit_msg, branch)
 		print("Added new changes")
 	end
 	if os.execute(git_commit) then
-		print(color.green .. "Committed with msg '" .. commit_msg .. color.white)
+		print(color.green .. "Committed with msg: " .. commit_msg .. color.white)
 	end
 	if os.execute(git_pull) then
 		print(color.purple .. "Pulled down changes from upstream" .. color.white)
