@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install lua and luacheck
       run: |
-        sudo apt-get update -y ; sudo apt-get install -y lua5.1; sudo apt-cache search luacheck
+        sudo apt-get update -y ; sudo apt-get install -y lua luacheck
     - name: Lint with lua
       run: |
         luacheck . --codes
