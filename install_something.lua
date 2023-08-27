@@ -11,7 +11,7 @@ local install = function(pkg)
 		print(color.lightgreen .. "To Install? Press Y/y or N/n" .. color.white)
 		local res = io.read()
 		if string.match(res, "[Yy]") then
-			os.execute("sudo " .. commands.pkg_mgr() .. "search " .. pkg)
+			os.execute("sudo " .. commands.pkg_mgr() .. " install -y " .. pkg)
 		else
 			os.exit()
 		end
