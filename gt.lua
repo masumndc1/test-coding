@@ -1,7 +1,7 @@
 #!/usr/bin/env lua
 
 -- I want to print the output in colored font.
-local color = require("color")
+local color = require("lua-color")
 
 local long_string = function()
 	local n = assert(io.popen("tput cols"))
