@@ -1,9 +1,9 @@
 #!/usr/bin/env lua
 
 -- local _G = _G
-local commands = require("commands")
-local vars = require("vars")
-local longest_line = require("longest_line")
+local commands = require("lua-commands")
+local vars = require("lua-vars")
+local longest_line = require("lua-longest_line")
 
 --[[ list all vars from global G
 for n in pairs(_G) do
@@ -60,14 +60,18 @@ assert(type(vars.nm_ping) == "number", "pass number")
 -- print(vars.term)
 
 print(vars.shell)
-print(commands.find_pkg())
+print(commands.pkg_mgr())
 print(commands.os())
 local ret = commands.run_command("ls -la")
 if ret then
 	print("command run successfully")
 end
 
-local file = arg[1] or "sort.lua"
+local file = arg[1] or "sort.txt"
 local long_nm, line = longest_line.nm_line(file)
 print(line)
 print(long_nm)
+
+local x = 10
+local y = 20
+print(("%d is smaller than %d"):format(x, y))
