@@ -28,6 +28,13 @@ end
 
 Increment(1, 2)
 
+-- next is a function used to Traverse all the fields of a Table
+-- another use of next
+atable = { "K", "Ke", "Sa", "So", "Ha", "Yu" }
+for k, v in next, atable do
+  print ("values of the table ", k, v)
+end
+
 -- using of assert is always good.
 if assert(os.execute("ls" .. " -la")) then
 	print(color.blue .. "command executation was good" .. color.white)
