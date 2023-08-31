@@ -47,6 +47,9 @@ end
 myfunction()
 print(debug.traceback(myfunction()))
 
+-- example of function as first-class value
+-- exmaple of lexical scoping where a function can
+-- access value of variable from another function.
 local newCounter = function()
 	local i = 0
 	return function()
@@ -55,7 +58,7 @@ local newCounter = function()
 	end
 end
 
-local c1 = newCounter()
+local c1 = newCounter() -- basically local c1 is equal to c1()
 print(c1())
 
 --[[
