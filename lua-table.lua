@@ -52,4 +52,13 @@ mt.__add = Set.union
 local c = a + b
 print(Set.print(c))
 
+-- the function table.unpack.
+-- It takes a list and returns elements from the list as results.
+print(table.unpack({ 10, 20, 30 })) -- 10   20   30
+A, B = table.unpack({ 10, 20, 30 }) -- a=10, b=20, 30 is discarded
+print(A, B)
+
+-- another example of table.unpack
+print(table.unpack({ "Sun", "Mon", "Tue", "Wed" }, 2, 3))
+
 -- end of file
