@@ -1,6 +1,7 @@
+#!/usr/bin/env lua
 -- practise on metatable
-
 -- declare two tables
+
 local C = { "one", "two", "three" }
 local Set = {}
 
@@ -9,15 +10,14 @@ function Set.new(l)
 	for _, v in ipairs(l) do
 		set[v] = true
 	end
-	-- print(set): this prints a memory location
 	return set
 end
 
 function Set.count(l)
+	-- show the location of the table in memory
 	print(l)
 	local count = 0
-	for _, v in ipairs(l) do
-		print(v)
+	for _ in pairs(l) do
 		count = count + 1
 	end
 	return count
