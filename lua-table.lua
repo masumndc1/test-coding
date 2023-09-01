@@ -55,8 +55,7 @@ print(Set.print(c))
 -- the function table.unpack.
 -- It takes a list and returns elements from the list as results.
 print(table.unpack({ 10, 20, 30 })) -- 10   20   30
-A, B = table.unpack({ 10, 20, 30 }) -- a=10, b=20, 30 is discarded
-print(A, B)
+print(table.unpack({ 10, 20, 30 }, 2, 3)) -- print only from pos 2 to pos 3
 
 -- another example of table.unpack
 print(table.unpack({ "Sun", "Mon", "Tue", "Wed" }, 2, 3))
