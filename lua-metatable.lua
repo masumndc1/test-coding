@@ -34,6 +34,29 @@ for i = 1, #something do
 	print(something[i])
 end
 
+local a = {
+	value = 5,
+}
+
+print("--------------------")
+print(a.value)
+print("--------------------")
+
+local mt = {
+	__index = function(a, b)
+		if a == b then
+			return true
+		elseif a > b or b > a then
+			return false
+		end
+	end,
+}
+
+print(getmetatable(mt))
+
+setmetatable(a, mt)
+print(mt({ 2, 2 }))
+print(a(2, 3))
 --[[for i = 1, #C do
     print(C[i])
 end]]
