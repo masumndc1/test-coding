@@ -43,10 +43,10 @@ print(a.value)
 print("--------------------")
 
 local mt = {
-	__index = function(a, b)
-		if a == b then
+	__index = function(aa, bb)
+		if aa == bb then
 			return true
-		elseif a > b or b > a then
+		elseif aa > bb or bb > aa then
 			return false
 		end
 	end,
@@ -70,16 +70,16 @@ local prototype = {
 }
 
 -- define a metatable
-local mt = {}
+local mtb = {}
 
 -- now set the prototype to mt.
 -- prototype it self a table and mt as well.
 -- therefore setting prototype to mt is not a problem.
-mt.__index = prototype
+mtb.__index = prototype
 
 -- construction function: how new table will be treated
 local function new(o)
-	setmetatable(o, mt)
+	setmetatable(o, mtb)
 	return o
 end
 
@@ -122,7 +122,7 @@ local function track(t)
 	-- proxy table for 't'
 	local proxy = {}
 	-- create metatable for the proxy
-	local mtb = {
+	local mtbb = {
 		__index = function(_, k)
 			print("*access to element " .. tostring(k))
 			-- access the original table
@@ -134,7 +134,7 @@ local function track(t)
 			t[k] = v
 		end,
 	}
-	setmetatable(proxy, mtb)
+	setmetatable(proxy, mtbb)
 	return proxy
 end
 
