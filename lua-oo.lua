@@ -8,6 +8,8 @@ local Account = {
 function Account:new(o)
 	o = o or {}
 	setmetatable(o, self)
+	-- here self means the prototype table itself.
+	-- therefore self means Account here.
 	self.__index = self
 	return o
 end
