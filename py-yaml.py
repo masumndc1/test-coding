@@ -2,6 +2,7 @@
 
 import yaml
 import os
+import sys
 from pprint import pprint
 
 with open('py-yaml.yml', 'r') as file:

@@ -1,44 +1,20 @@
 #!/usr/bin/env ruby
-# !/usr/env/ruby
 
-require('optparse')
-require('net/ssh')
+require 'net/ssh'
 
-options = {}
-opt = OptionParser.new do |opts|
-  opts.banner = %(Usage: rb-ssh.rb -r hostname -u user -c command)
+RemoteHost = Class.new
 
-  opts.on('-r', '--remote REMOTE', 'remote host') do |r|
-    options[:remote] = r
-  end
+class << RemoteHost
+  def conn(url, user, command)
+    @url = ARGV[0] || url
+    @user = ARGV[1] || user
+    @command = ARGV[2] || command
 
-  opts.on('-u', '--username USER', 'username') do |u|
-    options[:username] = u
-  end
-
-  opts.on('-c', '--command COMMAND', 'command to run') do |f|
-    options[:command] = f
-  end
-
-  opts.on_tail('-h', '--help', 'show this message') do
-    puts opts.help
-    exit
-  end
-end
-opt.parse!
-
-options[:remote] ||= 'nvim'
-options[:username] ||= 'ubuntu'
-
-def main(remote, username, command)
-  Net::SSH.start(remote, username) do |ssh|
-    result = ssh.exec!(command)
-    puts result
+    Net::SSH.start(@url, @user) do |ssh|
+      result = ssh.exec!(@command)
+      result
+    end
   end
 end
 
-if __FILE__ == $PROGRAM_NAME
-  main(options[:remote],
-       options[:username],
-       options[:command])
-end
+puts(RemoteHost.conn('thesis', 'ubuntu', 'ruby --version'))
