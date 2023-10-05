@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# example of
+# classmethod, staticmethod, property,
+# setter, isinstance, hasattr.
 
 class Immutable:
 
@@ -13,6 +16,10 @@ class Immutable:
     @classmethod
     def something(cls):
         print("hi im a class-method")
+
+    @staticmethod
+    def staticthing():
+        print("hi im a static-method")
 
     @property
     # Read-only descriptor
@@ -31,10 +38,26 @@ class Immutable:
         self._dept = value
 
 
-mark = Immutable('Botany', 'Mark Watney')
-print(mark.dept)
-print(mark.name)
-mark.dept = 'Space Pirate'
-print(mark.dept)
-print(mark.something)
 print(Immutable.something())
+print(Immutable.staticthing())
+mark = Immutable('Botany', 'Mark Watney')
+print(dir(mark))
+print(mark.name)
+print(mark.dept)
+
+
+if isinstance("dept", str):
+    print("string class")
+else:
+    print("cant determine")
+
+if hasattr(mark, "dept"):
+    try:
+        delattr(mark, "dept")
+    except AttributeError as e:
+        print(e)
+else:
+    print('false')
+
+print(mark.dept)
+print(type("dept"))
