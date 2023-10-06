@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 # example of
 # classmethod, staticmethod, property,
-# setter, isinstance, hasattr.
+# setter, isinstance, hasattr.hasattr
+
+
+from __future__ import annotations
+
 
 class Immutable:
 
     # Replace the instance dictionary
     __slots__ = ('_dept', '_name')
 
-    def __init__(self, dept, name):
+    def __init__(self, dept: "str", name: "str"):
         # Store to private attribute
         self._dept = dept
         self._name = name
@@ -41,10 +45,10 @@ class Immutable:
 print(Immutable.something())
 print(Immutable.staticthing())
 mark = Immutable('Botany', 'Mark Watney')
+pass_int = Immutable('zoology', float(123))
 print(dir(mark))
 print(mark.name)
 print(mark.dept)
-
 
 if isinstance("dept", str):
     print("string class")
@@ -61,3 +65,5 @@ else:
 
 print(mark.dept)
 print(type("dept"))
+print(pass_int.name)
+print(pass_int.__init__.__annotations__)
