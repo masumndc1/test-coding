@@ -1,0 +1,95 @@
+# pip install radon
+# radon cc *.py -a
+# https://github.com/rubik/radon
+
+gt.py
+    M 26:4 Color.color - C
+    C 11:0 Color - B
+    C 51:0 GitOperation - A
+    M 57:4 GitOperation.__init__ - A
+    M 67:4 GitOperation._add_new_files - A
+    M 72:4 GitOperation._commit - A
+    M 77:4 GitOperation._push - A
+    M 14:4 Color.__init__ - A
+    M 63:4 GitOperation._term_size - A
+py-abc.py
+    C 8:0 NarutoConverter - A
+    C 14:0 JSONtoNaruto - A
+    M 11:4 NarutoConverter.convert - A
+    M 15:4 JSONtoNaruto.__init__ - A
+    M 18:4 JSONtoNaruto.convert - A
+py-decorator.py
+    F 4:0 make_pretty - A
+    F 13:0 ordinary - A
+    F 18:0 extraordinary - A
+py-decorator_basic.py
+    F 6:0 return_2 - A
+    F 15:0 return_3 - A
+    F 19:0 main - A
+py-decorator_class.py
+    C 6:0 decorator_class - A
+    F 18:0 display - A
+    F 23:0 display_info - A
+    M 8:4 decorator_class.__init__ - A
+    M 11:4 decorator_class.__call__ - A
+py-decorator_example.py
+    F 10:0 my_logger - A
+    F 23:0 my_timer - A
+    F 41:0 display_info - A
+py-decorator_function.py
+    F 6:0 outer_fuction - A
+    F 10:0 decorated_function - A
+    F 23:0 display - A
+    F 28:0 display_info - A
+py-duplicate.py
+    F 4:0 duplicate - B
+    F 22:0 main - A
+py-generator.py
+    C 14:0 GeneratorPractise - A
+    M 21:4 GeneratorPractise.generator_list - A
+    M 18:4 GeneratorPractise.__init__ - A
+py-inheritence.py
+    C 4:0 Creature - A
+    C 12:0 Canins - A
+    C 35:0 Dog - A
+    F 60:0 main - A
+    M 5:4 Creature.__init__ - A
+    M 8:4 Creature.life - A
+    M 17:4 Canins.__init__ - A
+    M 22:4 Canins.tail - A
+    M 28:4 Canins.smelling_sense - A
+    M 40:4 Dog.__init__ - A
+    M 47:4 Dog.add_trick - A
+    M 53:4 Dog.add_sound - A
+py-install.py
+    F 11:0 main - B
+py-json.py
+    F 12:0 get_var - A
+    F 17:0 main - A
+py-prac.py
+    F 6:0 amazing - A
+    F 23:0 main - A
+py-property.py
+    C 10:0 Immutable - A
+    M 15:4 Immutable.__init__ - A
+    M 21:4 Immutable.something - A
+    M 25:4 Immutable.staticthing - A
+    M 30:4 Immutable.dept - A
+    M 35:4 Immutable.name - A
+    M 40:4 Immutable.dept - A
+py-staticmethod.py
+    C 3:0 Dates - A
+    M 4:4 Dates.__init__ - A
+    M 7:4 Dates.getDate - A
+    M 10:4 Dates.toDashDate - A
+py-subprocess.py
+    F 7:0 run_cmd - A
+    F 18:0 main - A
+py-testgenerator.py
+    C 8:0 generatorExample - A
+    M 10:4 generatorExample.test_num - A
+    M 16:4 generatorExample.test_exist - A
+    M 20:4 generatorExample.test_1_cannot_add_int_and_str - A
+
+71 blocks (classes, functions, methods) analyzed.
+Average complexity: A (1.704225352112676)
