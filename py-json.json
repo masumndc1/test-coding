@@ -1,0 +1,12 @@
+{
+  "name": "masum",
+  "sys": "unix",
+  "car": "vw",
+  "lang": {
+    "0": "c",
+    "1": "python",
+    "2": "lua",
+    "3": "ruby"
+  },
+  "game": "soccer"
+}
